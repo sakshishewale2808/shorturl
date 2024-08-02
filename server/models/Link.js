@@ -24,4 +24,3 @@ views:{
 
 const Link = model("Link",Linkschema)
 export default Link;
-//TODO:cons jobs apply 
