@@ -1,8 +1,72 @@
-body {
-  font-family: 'Arial', sans-serif;
-  background-color: #f2f7f5;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
+body{
+  font-family: "Teko", sans-serif;
+  font-optical-sizing: auto;
+
+ 
+}
+.user-input {
+  display: block;
+  margin: 15px auto;
+  padding: 10px;
+  width: 90%;
+  border: 1px solid #0033cc;
+  border-radius: 5px;
+  font-size: 16px;
+  font-family: "Teko", sans-serif;
+  font-optical-sizing: auto;
+}
+
+.user-input:focus, .user-input:active {
+  outline: none;
+  border-color: #0033cc;
+  box-shadow: 0 0 5px rgba(0, 51, 204, 0.5);
+}
+
+.auth-heading {
+  text-align: center;
+  color: #0033cc;
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.auth-form {
+  width: 400px;
+  border: 1px solid #0033cc;
+  padding: 20px;
+  display: block;
+  margin: 20px auto;
+  border-radius: 10px;
+  background-color: #c2d1f0;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.btn {
+  background-color: #0033cc;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 20px;
+  border: none;
+  cursor: pointer;
+  display: block;
+  margin: 20px auto;
+  font-size: 16px;
+  font-family: "Teko", sans-serif;
+  font-optical-sizing: auto;
+}
+
+.btn:hover {
+  background-color: #002299;
+}
+
+.auth-link {
+  text-align: center;
+  display: block;
+  margin-top: 20px;
+  font-size: 18px;
+  text-decoration: none;
+  color: #0033cc;
+}
+
+.auth-link:hover {
+  text-decoration: underline;
 }

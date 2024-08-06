@@ -3,8 +3,9 @@ import mongoose from "mongoose";
 import cors from "cors";
 import dotenv from "dotenv";
 dotenv.config();
+import {postLink,getSlugRedirect,postSignup,postLogin,getLinks} from "./controllers/Link.js";
+import User from "./models/user.js";
 import Link from "./models/Link.js";
-import {postLink,getSlugRedirect} from "./controllers/Link.js";
 
 const app = express()
 app.use(express.json())
@@ -33,11 +34,9 @@ app.get("/health",(req,res)=>{
     })
 })
 app.post ("/link",postLink)
+app.get("/Links",getLinks)
 app.get ("/:slug",getSlugRedirect)
-
 app.listen(portnumber,(req,res)=>{
-console.log(`code is running at port ${portnumber}`);
-
-})
-
-
+console.log(`code is running at port ${portnumber}`);})
+app.post("/signup",postSignup)
+app.post("/login",postLogin)

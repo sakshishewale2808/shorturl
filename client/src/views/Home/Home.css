@@ -1,37 +1,63 @@
+.main-container-parent{
+  display: flex;
+  justify-content: space-around;
+ 
+}
 h1 {
     text-align: center;
     color: #00473e;
     font-size:40px;
     font-weight: bolder;
+    
    
+  }
+  .h1-div{
+    position: sticky;
+    top:0;
+    background-color: #fff;
+    padding: 10px;
+    text-align: center;
+    z-index:1000;
   }
   .form {
     width: 100%;
     max-width: 400px;
     background-color:white;
-    padding: 25px;
+    padding: 1%;
     border-radius: 20px;
     box-shadow: 0 4px 12px #00332c;
-    margin: 20px 0;
+    height:300px;
+    margin-top:10px;
+  }
+  .all-links-container{
+    overflow-y: scroll;
+    max-height:400px;
+    background-color:#fff;
+    box-shadow: 0 4px 12px rgba(0 0 5px 0.2) ;
+    width:40%;
+    margin:0;
+
   }
    .input-fields {
     display: block;
     width: 80%;
     padding: 10px;
-    margin: 15px auto;
+    margin: 20px auto;
     border: 1px solid #363232;
     border-radius: 10px;
   }
-  
+  .input-fields:focus , .input-fields:active{
+    outline: none;
+  }
   .btn {
     display: block;
-    width:80%;
+    width:60%;
     padding: 12px;
-    margin: 20px auto;
-    background-color: #faae2b;
+    margin: 50px auto;
+    background-color: #ffd803;
     border: none;
     border-radius: 30px;
-    color: black;
+    color: #272343;
     cursor: pointer;
   }
   
