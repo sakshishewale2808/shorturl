@@ -3,7 +3,7 @@
   flex-direction: column;
   align-items: center;
   padding: 20px;
-  background-color: #f4f4f4; /* Light background color for contrast */
+  background-color: #f4f4f4; 
 }
 
 .auth-heading {
