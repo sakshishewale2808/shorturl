@@ -1,67 +1,82 @@
-.main-container-parent{
+.main-container-parent {
   display: flex;
   justify-content: space-around;
- 
+  
 }
-h1 {
-    text-align: center;
-    color: #00473e;
-    font-size:40px;
-    font-weight: bolder;
-    
-   
-  }
-  .h1-div{
-    position: sticky;
-    top:0;
-    background-color: #fff;
-    padding: 10px;
-    text-align: center;
-    z-index:1000;
-  }
-  .form {
-    width: 100%;
-    max-width: 400px;
-    background-color:white;
-    padding: 1%;
-    border-radius: 20px;
-    box-shadow: 0 4px 12px #00332c;
-    height:300px;
-    margin-top:10px;
-  }
-  .all-links-container{
-    overflow-y: scroll;
-    max-height:400px;
-    background-color:#fff;
-    box-shadow: 0 4px 12px rgba(0 0 5px 0.2) ;
-    width:40%;
-    margin:0;
+.greet{
+  font-size: 15px;
+}
+.logout{
+  font-size: 20px;
+  cursor:pointer;
+}
 
-  }
-   .input-fields {
-    display: block;
-    width: 80%;
-    padding: 10px;
-    margin: 20px auto;
-    border: 1px solid #363232;
-    border-radius: 10px;
-  }
-  .input-fields:focus , .input-fields:active{
-    outline: none;
-  }
-  .btn {
-    display: block;
-    width:60%;
-    padding: 12px;
-    margin: 50px auto;
-    background-color: #ffd803;
-    border: none;
-    border-radius: 30px;
-    color: #272343;
-    cursor: pointer;
-  }
-  
-  .btn:hover {
-    background-color: #e69500;
-  }
-  
+h1 {
+  text-align: center;
+  color: #00473e;
+  font-size: 40px;
+  font-weight: bolder;
+}
+
+.h1-div {
+  position: sticky;
+  top: 0;
+  background-color: #fff;
+  padding: 10px;
+  text-align: center;
+  z-index: 1000;
+}
+
+.form {
+  width: 100%;
+  max-width: 400px;
+  background-color: white;
+  padding: 1%;
+  border-radius: 20px;
+  box-shadow: 0 4px 12px #00332c;
+  margin-top: 10px;
+}
+
+.all-links-container {
+  overflow-y: scroll;
+  max-height: 400px;
+  background-color: #fff;
+  box-shadow: 0 4px 12px rgba(0, 0, 5, 0.2);
+  width: 40%;
+  margin: 0;
+  border-radius: 20px;
+}
+
+.input-fields {
+  display: block;
+  width: 80%;
+  padding: 10px;
+  margin: 20px auto;
+  border: 1px solid #363232;
+  border-radius: 10px;
+}
+
+.input-fields:focus,
+.input-fields:active {
+  outline: none;
+}
+
+.btn {
+  display: block;
+  width: 60%;
+  padding: 12px;
+  margin: 50px auto;
+  background-color: #ffd803;
+  border: none;
+  border-radius: 30px;
+  color: #272343;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background-color: #e69500;
+}
+
+.login-link {
+  margin: 0 10px;
+}

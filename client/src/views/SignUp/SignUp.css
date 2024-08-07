@@ -1,24 +1,15 @@
 .main-container-parent {
-    display: flex;
-    justify-content: space-around;
-  }
+  display: block;
+  justify-content: space-around;
   
-  .auth-heading {
+}
+.auth-heading {
     text-align: center;
     color: #00473e;
     font-size: 40px;
     font-weight: bolder;
   }
-  
-  .h1-div {
-    position: sticky;
-    top: 0;
-    background-color: #fff;
-    padding: 10px;
-    text-align: center;
-    z-index: 1000;
-  }
-  
+ 
   .form {
     width: 100%;
     max-width: 400px;
@@ -29,16 +20,7 @@
     height: auto;
     margin-top: 10px;
   }
-  
-  .all-links-container {
-    overflow-y: scroll;
-    max-height: 400px;
-    background-color: #fff;
-    box-shadow: 0 4px 12px rgba(0, 0, 5, 0.2);
-    width: 40%;
-    margin: 0;
-  }
-  
+
   .input-fields {
     display: block;
     width: 80%;

@@ -6,13 +6,39 @@ import toast, {Toaster} from "react-hot-toast";
 import LinkCard from '../../components/LinkCard/LinkCard';
 
 function Home() {
+    const [user,setUser] = useState('')
     const [linkData,setlinkData]=useState({
         title:"",
         target:"",
-        slug:""
+        slug:"",
+        user: ""
     })
 
-const [links,setLinks] = useState([])   
+    const [links,setLinks] = useState([])   
+    useEffect(()=>{
+        const currentUser = JSON.parse(localStorage.getItem('currentUser'))
+
+        if(currentUser){
+            setUser(currentUser)
+            setlinkData({...linkData, user: currentUser._id})
+        }
+        if(!currentUser){
+            window.location.href = "/login"
+        }
+    },[]
+    )
+   const loadLinks = async()=>{
+        if(!user._id){
+            return
+        }
+    const response = await axios.get(`${process.env.REACT_APP_API_URL}/userlink?userId=${user._id}`)  
+    setLinks(response.data.data)
+    toast.dismiss()  
+
+    }
+    useEffect(()=>{
+        loadLinks()
+    },[user])
 
     const shortUrl = async () =>{
         const response = await axios.post(`${process.env.REACT_APP_API_URL}/link`,linkData)
@@ -22,26 +48,29 @@ const [links,setLinks] = useState([])
             setlinkData({
                 title:"",
                 target:"",
-                slug:""
+                slug:"",
+                user: ""
             })
         }
         else{
-            toast.error(response.data.message)
+            toast.error("error found")
         }
     }
-const fetchAlllinks = async ()=>{
-    const response = await axios.get(`${process.env.REACT_APP_API_URL}/Links`)
-    setLinks(response.data.data)
-    toast.success("links fetched successfully")
-
-}
-useEffect(()=>{
-    fetchAlllinks()
-},[])
     return (
     <div>
         <h1>Link Smarter, Not Harder</h1>
+        <div className='greet'>
+            <span>Hello {user.Name}</span>
+            <p className='logout' onClick={()=>{
+                localStorage.clear()
+                toast.success("user logged out successfully")
+                setTimeout(()=>{
+                    window.location.href = "/login"
+                },4000)
+            }}>Logout</p>
+        </div>
         <div className='main-container-parent'>
+
         <form className='form'>
             <input 
             type="text"

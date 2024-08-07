@@ -6,24 +6,24 @@ import "./../../index.css";
 
 function Signup() {
   const [user, setUser] = useState({
-    fullName: '',
-    email: '',
+    Name: '',
+    Email: '',
     password: '',
     dob: ''
   });
 
   const signup = async () => {
     const response = await axios.post(`${process.env.REACT_APP_API_URL}/signup`, {
-      fullName: user.fullName,
-      email: user.email,
+      Name: user.Name,
+      Email: user.Email,
       password: user.password,
       dob: user.dob
     });
     if (response.data.success) {
       toast.success(response.data.message);
       setUser({
-        fullName: '',
-        email: '',
+        Name: '',
+        Email: '',
         password: '',
         dob: ''
       });
@@ -42,15 +42,15 @@ function Signup() {
           type='text'
           placeholder='Full Name'
           className='input-fields'
-          value={user.fullName}
-          onChange={(e) => setUser({ ...user, fullName: e.target.value })}
+          value={user.Name}
+          onChange={(e) => setUser({ ...user, Name: e.target.value })}
         />
         <input
           type='email'
           placeholder='E-mail'
           className='input-fields'
-          value={user.email}
-          onChange={(e) => setUser({ ...user, email: e.target.value })}
+          value={user.Email}
+          onChange={(e) => setUser({ ...user, Email: e.target.value })}
         />
         <input
           type='password'

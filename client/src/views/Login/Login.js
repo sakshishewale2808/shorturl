@@ -5,24 +5,24 @@ import axios from 'axios'
 import toast,{Toaster} from 'react-hot-toast'
 
 function Login() {
-  const [email,setEmail]=useState('')
+  const [Email,setEmail]=useState('')
   const [password,setPassword]=useState('')
   
   const loginNow = async ()=>{
 const response = await axios.post(`${process.env.REACT_APP_API_URL}/login`,{
-  email:email,
+  Email:Email,
  password:password
 })
 if(response.data.success){
   toast.success(response.data.message)
   
-//   localStorage.setItem('currentUser', JSON.stringify(response.data.data))
+ localStorage.setItem('currentUser', JSON.stringify(response.data.data))
 
   toast.loading('Redirecting to dashboard...')
 
   setTimeout(() => {
     window.location.href = '/'
-  }, 7000)
+  }, 4000)
 }
 else{
   toast.error(response.data.message)
@@ -36,7 +36,7 @@ else{
           type='email'
           placeholder='Email'
           className='user-input'
-          value={email}
+          value={Email}
           onChange={(e) => setEmail(e.target.value)}
           />
           <input
