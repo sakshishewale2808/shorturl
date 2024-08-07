@@ -3,7 +3,7 @@ import mongoose from "mongoose";
 import cors from "cors";
 import dotenv from "dotenv";
 dotenv.config();
-import {postLink,getSlugRedirect,postSignup,postLogin,getLinks} from "./controllers/Link.js";
+import {postLink,getSlugRedirect,postSignup,postLogin,getLinks,getUserLink} from "./controllers/Link.js";
 import User from "./models/user.js";
 import Link from "./models/Link.js";
 
@@ -33,10 +33,13 @@ app.get("/health",(req,res)=>{
         
     })
 })
+app.get("/userlink",getUserLink)
 app.post ("/link",postLink)
 app.get("/Links",getLinks)
 app.get ("/:slug",getSlugRedirect)
 app.listen(portnumber,(req,res)=>{
-console.log(`code is running at port ${portnumber}`);})
+console.log(`code is running at port ${portnumber}`);
+})
 app.post("/signup",postSignup)
 app.post("/login",postLogin)
+
