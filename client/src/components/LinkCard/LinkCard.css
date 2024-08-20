@@ -15,12 +15,6 @@
    
   }
   
-  .link-card-url {
-    color: #007BFF;
-    margin:3px auto;
-    text-decoration: none;
-    display: block;
-  }
   a{
     text-decoration: none;
   }
@@ -43,4 +37,25 @@
     bottom:0;
     right:10px;
     }
+    .link-card-url-container {
+      display: flex;
+      align-items: center; 
+  }
+  
+  .link-card-url {
+      color: #007BFF;
+      margin-right: 10px;
+      text-decoration: none;
+      display: block;
+  }
+  
+  .copy-button {
+      width: 20px;
+      height: 20px;
+      cursor: pointer;
+  }
+  
+  .copy-button:hover {
+      opacity: 0.8;
+  }
   

@@ -1,3 +1,4 @@
+import bcrypt from "bcrypt";
 import User from "./../models/user.js";
 const postSignup = async (req, res) => {
     const {
@@ -5,11 +6,13 @@ const postSignup = async (req, res) => {
         Email,
         password,
         dob } = req.body
+    const hashedPassword = await bcrypt.hash(password,10);
+    
     const user = new User(
         {
             Name,
             Email,
-            password,
+            password:hashedPassword,
             dob
         }
     )
@@ -38,10 +41,8 @@ const postSignup = async (req, res) => {
 const postLogin = async (req, res) => {
     const { Email, password } = req.body
     try {
-        const user = await User.findOne({
-            Email: Email,
-            password: password
-        })
+        const user = await User.findOne({ Email: Email});
+        if (user && await bcrypt.compare(password, user.password)) 
         if (user) {
             res.json({
                 success: true,
